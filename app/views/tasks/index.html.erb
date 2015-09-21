@@ -1,0 +1,21 @@
+<div class="row">
+  <div class="col-md-10 col-md-offset-1">
+  <% @tasks.each do |task| %>
+		  <div class="col-xs-6 col-md-2">
+		    <a href="#" class="thumbnail">
+		    
+
+				<%= image_tag task.photo.url(:medium) %>
+
+	        
+	          <% if task.title? %>
+		      	<%= task.title %><br>
+		      	<%= task.user.email %><br>
+		      	<%= link_to "Edit", edit_task_path(task)%>
+		      <% end %>
+
+		    </a>
+		  </div>
+	  <% end %>
+  </div>
+</div>

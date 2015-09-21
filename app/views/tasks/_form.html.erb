@@ -1,0 +1,11 @@
+<h1>Tasks#form</h1>
+	<%= form_for @task, :html =>{:multipart => true} do |f| %>
+	<%= f.label :title %><br>
+	<%= f.text_field :title %><br>
+	<%= f.label :active %><br>
+	<%= f.check_box :active %><br>
+	<%= f.file_field :photo %><br><br>
+
+	<%= f.submit "Add" %>
+
+<%end%>
