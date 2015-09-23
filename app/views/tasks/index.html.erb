@@ -1,20 +1,24 @@
 <div class="row">
   <div class="col-md-10 col-md-offset-1">
   <% @tasks.each do |task| %>
-		  <div class="col-xs-6 col-md-2">
-		    <a href="#" class="thumbnail">
-		    
+		  <div class="col-xs-6 col-md-2 notebox">
 
-				<%= image_tag task.photo.url(:medium) %>
+			<%= link_to (image_tag task.photo.url(:medium)), task %>
 
 	        
 	          <% if task.title? %>
-		      	<%= task.title %><br>
-		      	<%= task.user.email %><br>
-		      	<%= link_to "Edit", edit_task_path(task)%>
+		          	<% if task.title.length >=20 %>
+			      		<span class="tasktitile"><%= task.title.truncate(20) %></span><br>
+			      	<% else %>
+						<span class="tasktitile"><%= task.title %></span><br>
+			      	<% end%>
+		      	<!--<%= task.user.email %><br>-->
+		      		<% if user_signed_in? %>
+		      			<span class="pull-right"> <%= link_to "Edit", edit_task_path(task), :class =>"btn btn-default"%></span>
+		      		<% end %>
 		      <% end %>
 
-		    </a>
+
 		  </div>
 	  <% end %>
   </div>

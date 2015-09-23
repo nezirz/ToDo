@@ -1,4 +1,24 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Comic Sans MS", cursive, sans-serif;
+}
+p, div {
+    font-family: "Comic Sans MS", cursive, sans-serif;
+}
+
+.notebox{
+	height: 250px;
+}
+.notebox :hover{
+	border: 1px solid #222;
+}
+.tasktitile{
+
+	position: absolute;
+    margin-top: -110px;
+    margin-left: 44px;
+    	border:none !important;
+}
 
