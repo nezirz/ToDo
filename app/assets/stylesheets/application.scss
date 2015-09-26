@@ -1,5 +1,6 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import 'bootstrap-datetimepicker';
 
 h1, h2, h3, h4, h5, h6 {
     font-family: "Comic Sans MS", cursive, sans-serif;
@@ -10,15 +11,26 @@ p, div {
 
 .notebox{
 	height: 250px;
+
 }
 .notebox :hover{
 	border: 1px solid #222;
+
 }
 .tasktitile{
-
-	position: absolute;
-    margin-top: -110px;
-    margin-left: 44px;
-    	border:none !important;
+   position: absolute; 
+   top: 95px; 
+   left: 28%; 
+   width: 100%; 
+   border:none !important;
+   
+}
+.divP20{
+	padding: 20px;
 }
 
+@media (max-width: 1000px) {
+	.tasktitile{
+	   left: 20% !important;  
+	}
+}

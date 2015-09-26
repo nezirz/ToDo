@@ -8,12 +8,12 @@
 	        
 	          <% if task.title? %>
 		          	<% if task.title.length >=20 %>
-			      		<span class="tasktitile"><%= task.title.truncate(20) %></span><br>
+			      		<div class="tasktitile"><%= task.title.truncate(20) %></div><br>
 			      	<% else %>
-						<span class="tasktitile"><%= task.title %></span><br>
+						<div class="tasktitile"><%= task.title %></div><br>
 			      	<% end%>
 		      	<!--<%= task.user.email %><br>-->
-		      		<% if user_signed_in? %>
+		      		<% if user_signed_in?  && current_user.id==task.user_id %>
 		      			<span class="pull-right"> <%= link_to "Edit", edit_task_path(task), :class =>"btn btn-default"%></span>
 		      		<% end %>
 		      <% end %>

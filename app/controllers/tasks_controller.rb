@@ -4,6 +4,8 @@ class TasksController < ApplicationController
   end
 
   def show
+      @task = Task.find(params[:id])
+
   end
 
   def new
@@ -12,7 +14,8 @@ class TasksController < ApplicationController
 
   def create
     @task=Task.create(task_params)
-    @task.user_id=1
+    @task.user_id=current_user.id
+    
     if @task.save
       flash[:notice] = "Post successfully created"
       redirect_to tasks_path
@@ -42,6 +45,6 @@ class TasksController < ApplicationController
 
   private 
   def task_params
-    params.require(:task).permit(:title,:active,:photo,:user_id)
+    params.require(:task).permit(:title,:active,:photo,:user_id,:event_time,:assigned_to)
   end
 end

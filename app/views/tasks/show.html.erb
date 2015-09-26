@@ -1,2 +1,7 @@
-<h1>Tasks#show</h1>
-<p>Find me in app/views/tasks/show.html.erb</p>
+
+<div class="form-group divP20">
+	<h1>Title: <%= @task.title %></h1>
+	<h1>Name:<%= @task.user.first_name %>  <%= @task.user.last_name %></h1>
+	<h1>Event Time:<%= @task.event_time %></h1>
+	<h1>Asssignee:<%= @task.assigned_to %></h1>
+</div>
