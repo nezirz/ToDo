@@ -1,6 +1,10 @@
 class TasksController < ApplicationController
   def index
-    @tasks=Task.all
+    if user_signed_in?
+      @tasks=Task.where({user_id:current_user.id,active:true}).order(event_time: :asc)
+    else
+      @tasks=Task.where({active:true})
+    end
   end
 
   def show
@@ -27,11 +31,13 @@ class TasksController < ApplicationController
 
   def edit
     @task=Task.find(params[:id])
+
   end
 
   def update
       @task=Task.find(params[:id])
       @task.user_id=1
+      
       if @task.update_attributes(task_params)
         flash[:notice] = "Task successfully updated"
         redirect_to tasks_path

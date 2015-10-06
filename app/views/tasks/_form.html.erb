@@ -1,11 +1,11 @@
 <%= form_for @task, :html =>{:multipart => true} do |f| %>
 	<div class="col-md-4 ">
+		<%= f.label :event_time  %><br>
+		<%= f.text_field :event_time, :class =>"form-control" %><br>		
+
 		<%= f.label :title  %><br>
 		<%= f.text_field :title, :class =>"form-control" %><br>
 		
-
-		<%= f.label :event_time  %><br>
-		<%= f.text_field :event_time, :class =>"form-control" %><br>
 
 		<%= f.label :photo %><br>
 		<%= f.file_field :photo, :class =>"form-control"  %><br>

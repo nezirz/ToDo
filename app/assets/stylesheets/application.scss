@@ -4,26 +4,46 @@
 
 h1, h2, h3, h4, h5, h6 {
     font-family: "Comic Sans MS", cursive, sans-serif;
+    color: #000F55;
 }
 p, div {
     font-family: "Comic Sans MS", cursive, sans-serif;
+    color:#000F55;
 }
 
 .notebox{
-	height: 250px;
-
+	height: 370px;
+    width: 400px;
 }
 .notebox :hover{
 	border: 1px solid #222;
-
+}
+.notebox a img{
+  height: 300px;
+  width: 395px;
 }
 .tasktitile{
-   position: absolute; 
-   top: 95px; 
-   left: 28%; 
-   width: 100%; 
-   border:none !important;
-   
+  left: 0;
+  position:absolute;
+  text-align:center;
+  top: 120px;
+  width: 100%;
+  font-size:32px;
+}
+.tasktitile:hover{
+  border:none !important;
+  cursor: pointer;
+}
+.tasktime{
+  left: 0;
+  position:absolute;
+  text-align:center;
+  top: 165px;
+  width: 100%;
+  font-size:16px;
+}
+.tasktime:hover{
+  border:none;
 }
 .divP20{
 	padding: 20px;
@@ -34,3 +54,4 @@ p, div {
 	   left: 20% !important;  
 	}
 }
+

@@ -13,14 +13,16 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap-sprockets
-//= require turbolinks
+
 //= require moment
 //= require bootstrap-datetimepicker
 //= require_tree .
 
-$( document ).ready(function() {
+//$( document ).ready(function() {
   	$(function () {
-	    $('#task_event_time').datetimepicker();
+	    $('#task_event_time').datetimepicker(
+  				{format: 'DD/MM/YYYY H:mm'}
+	    	);
 	});
 
-});
+//});
