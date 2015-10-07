@@ -1,20 +1,21 @@
 <div class="row">
   <div class="col-md-10 col-md-offset-1">
   <% @tasks.each do |task| %>
-		  <div class="col-xs-6 col-md-2 notebox">
+		  <div class="col-md-2 notebox">
 
 			<%= link_to (image_tag task.photo.url(:medium)), task %>
 
 	        
 	          <% if task.title? %>
 		          	<%= link_to(task) do %>
-			          	<% if task.title.length >=20 %>
-				      		<div class="tasktitile"><%= task.title.truncate(20)+".." %></div><br>
+			          	<% if task.title.length >=18%>
+				      		<label class="tasktitile"><%= task.title.truncate(18)+".." %></label><br>
 				      	<% else %>
-							<div class="tasktitile"><%= task.title %></div><br>
+							<label class="tasktitile"><%= task.title %></label><br>
 				      	<% end%>
-				      	
-				      	<div class="tasktime"><%= task.event_time.strftime('%d/%m/%Y %H:%M') %></div><br>
+				      	<% if task.event_time?%>
+				      		<label class="tasktime"><%= task.event_time.strftime('%D %H:%M') %></label><br>
+				      	<%end %>
 			      	<%end %>
 		      	<!--<%= task.user.email %><br>-->
 		      		<% if user_signed_in?  && current_user.id==task.user_id %>

@@ -15,31 +15,30 @@ p, div {
 	height: 370px;
     width: 400px;
 }
-.notebox :hover{
-	border: 1px solid #222;
-}
+
 .notebox a img{
   height: 300px;
   width: 395px;
 }
 .tasktitile{
-  left: 0;
+  left: 16px;
   position:absolute;
   text-align:center;
   top: 120px;
-  width: 100%;
+  width: 96%;
   font-size:32px;
 }
 .tasktitile:hover{
   border:none !important;
+  font-size: 36px;
   cursor: pointer;
 }
 .tasktime{
-  left: 0;
+  left: 16px;
   position:absolute;
   text-align:center;
   top: 165px;
-  width: 100%;
+  width: 95%;
   font-size:16px;
 }
 .tasktime:hover{
