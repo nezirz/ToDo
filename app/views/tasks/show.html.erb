@@ -1,7 +1,16 @@
 
-<div class="form-group divP20">
-	<h1>Title: <%= @task.title %></h1>
-	<h1>Name:<%= @task.user.first_name %>  <%= @task.user.last_name %></h1>
-	<h1>Event Time:<%= @task.event_time %></h1>
-	<h1>Asssignee:<%= @task.assigned_to %></h1>
+<div class="col-md-offset-1 col-md-10">
+			
+	<div class="form-group divP20 show">
+			<%= link_to (image_tag @task.photo.url(:medium),:class => "img-responsive center-block"), @task %>
+			<div class="showtext">
+				<h1><b>Title:</b> <%= @task.title %></h1>
+
+				<h1><b>Name:</b>  <%= @task.user.first_name %>  <%= @task.user.last_name %></h1>ß
+
+				<h1><b>Event Time:</b> <%= @task.event_time %></h1>
+
+				<h1><b>Created By:</b> <%=  @createdby.first_name %> <%= @createdby.last_name %></h1>
+			</div>
+	</div>
 </div>

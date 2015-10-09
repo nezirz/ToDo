@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150926171343) do
+ActiveRecord::Schema.define(version: 20151009064029) do
 
   create_table "tasks", force: :cascade do |t|
     t.string   "title"
@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(version: 20150926171343) do
     t.integer  "photo_file_size"
     t.datetime "photo_updated_at"
     t.datetime "event_time"
-    t.integer  "assigned_to"
+    t.integer  "created_by"
   end
 
   create_table "users", force: :cascade do |t|

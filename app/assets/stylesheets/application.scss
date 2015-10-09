@@ -1,14 +1,26 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import 'bootstrap-datetimepicker';
+ @font-face {
+        font-family: "Worstveld Sling Extra";
+        src: url(/assets/fonts/WorstveldSlingExtra.ttf) format("truetype");
+    }
+
+
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: "Comic Sans MS", cursive, sans-serif;
+    font-family: "Worstveld Sling Extra", cursive, sans-serif;
     color: #000F55;
 }
 p, div {
-    font-family: "Comic Sans MS", cursive, sans-serif;
+    font-family: "Worstveld Sling Extra", cursive, sans-serif;
     color:#000F55;
+}
+.top60{
+    margin-top: 60px;
+}
+.backboard{
+  background-image: url("board.jpg");
 }
 
 .notebox{
@@ -20,17 +32,28 @@ p, div {
   height: 300px;
   width: 395px;
 }
+.show a img{
+  height: 800px;
+  margin: 0 auto;
+}
+.showtext{
+  position:absolute;
+  text-align:center;
+  top: 120px;
+  width: 96%;
+  font-size:38px;
+}
 .tasktitile{
   left: 16px;
   position:absolute;
   text-align:center;
   top: 120px;
   width: 96%;
-  font-size:32px;
+  font-size:38px;
 }
 .tasktitile:hover{
   border:none !important;
-  font-size: 36px;
+  font-size: 32px;
   cursor: pointer;
 }
 .tasktime{
@@ -47,6 +70,11 @@ p, div {
 .divP20{
 	padding: 20px;
 }
+.logged{
+  margin: 15px 10px 0 0;
+}
+
+
 
 @media (max-width: 1000px) {
 	.tasktitile{

@@ -1,7 +1,7 @@
 class TasksController < ApplicationController
   def index
     if user_signed_in?
-      @tasks=Task.where({user_id:current_user.id,active:true}).order(event_time: :asc)
+      @tasks=Task.where({created_by:current_user.id,active:true}).order(event_time: :asc)
     else
       @tasks=Task.where({active:true})
     end
@@ -9,6 +9,7 @@ class TasksController < ApplicationController
 
   def show
       @task = Task.find(params[:id])
+      @createdby=User.find(@task.created_by)
 
   end
 
@@ -18,7 +19,8 @@ class TasksController < ApplicationController
 
   def create
     @task=Task.create(task_params)
-    @task.user_id=current_user.id
+    #@task.user_id=current_user.id
+    @task.created_by=current_user.id
     
     if @task.save
       flash[:notice] = "Post successfully created"
@@ -36,7 +38,8 @@ class TasksController < ApplicationController
 
   def update
       @task=Task.find(params[:id])
-      @task.user_id=1
+    #@task.user_id=current_user.id
+    #@task.assigned_to=assigned_to
       
       if @task.update_attributes(task_params)
         flash[:notice] = "Task successfully updated"
@@ -51,6 +54,6 @@ class TasksController < ApplicationController
 
   private 
   def task_params
-    params.require(:task).permit(:title,:active,:photo,:user_id,:event_time,:assigned_to)
+    params.require(:task).permit(:title,:active,:photo,:user_id,:event_time,:created_by)
   end
 end

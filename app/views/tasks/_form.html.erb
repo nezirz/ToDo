@@ -11,7 +11,7 @@
 		<%= f.file_field :photo, :class =>"form-control"  %><br>
 
 		<%= f.label "Assigne to" %><br>
-		<%= f.collection_select :id, User.all, :id, :first_name ,:class =>"form-control"%><br><br>
+		<%= f.collection_select :user_id, User.all, :id, :first_name ,:class =>"form-control"%><br><br>
 
 		<%= f.label :active %><br>
 		<%= f.check_box :active %><br><br>

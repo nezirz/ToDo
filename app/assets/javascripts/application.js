@@ -18,15 +18,11 @@
 //= require bootstrap-datetimepicker
 //= require_tree .
 
-//$( document ).ready(function() {
   	$(function () {
 	    $('#task_event_time').datetimepicker(
   				{
-
-  					//format: 'DD MM YYYY H:mm'
   					format: 'YYYY/MM/DD h:m'
   				}
 	    	);
 	});
 
-//});
