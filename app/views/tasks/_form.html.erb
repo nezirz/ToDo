@@ -1,5 +1,5 @@
 <%= form_for @task, :html =>{:multipart => true} do |f| %>
-	<div class="col-md-4 ">
+	<div class="col-md-6 label30">
 		<%= f.label :event_time  %><br>
 		<%= f.text_field :event_time, :class =>"form-control" %><br>		
 
@@ -9,12 +9,24 @@
 
 		<%= f.label :photo %><br>
 		<%= f.file_field :photo, :class =>"form-control"  %><br>
-
-		<%= f.label "Assigne to" %><br>
-		<%= f.collection_select :user_id, User.all, :id, :first_name ,:class =>"form-control"%><br><br>
-
-		<%= f.label :active %><br>
-		<%= f.check_box :active %><br><br>
-		<%= f.submit "Add", :class =>"btn btn-default" %>
+		<div class="row">
+			<div class="col-md-4">
+					<%= f.label "Assigne to" %><br>
+			</div>
+			<div class="col-md-4">
+					<%= f.label :active %>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-4">
+				<%= f.collection_select :user_id, User.all, :id, :first_name ,:class =>"form-control"%><br><br>
+			</div>
+			<div class="col-md-4">
+				<%= f.check_box :active %><br><br>
+			</div>
+			<div class="col-md-4">
+				<%= f.submit "SAVE", :class =>"btn btn-default" %>
+			</div>
+		</div>
 	</div>
 <%end%>
