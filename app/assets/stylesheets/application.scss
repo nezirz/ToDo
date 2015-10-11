@@ -29,18 +29,23 @@ p, div {
 }
 
 .notebox{
-	/*height: 370px;
-    width: 400px;*/
-        margin-right: 35px;
+  margin-right: 35px;
 }
 
 .notebox a img{
   height: 300px;
   width: 395px;
 }
+.brand{
+      font-size: 72px !important;
+}
 .show a img{
+
   height: 800px;
+  width:10000px;
+  padding:20px;
   margin: 0 auto;
+  margin-top: -150px;
 }
 .showtext{
   position:absolute;
