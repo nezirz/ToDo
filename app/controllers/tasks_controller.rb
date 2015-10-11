@@ -1,4 +1,6 @@
 class TasksController < ApplicationController
+    before_action :authenticate_user! , except: [:index,:show]
+    
   def index
     if user_signed_in?
       @tasks=Task.where({created_by:current_user.id,active:true}).order(event_time: :asc)
